@@ -10,7 +10,6 @@ import (
 
 func main() {
 	listener, err := net.Listen("tcp", ":5300")
-
 	if err != nil {
 		grpclog.Fatalf("failed to listen: %v", err)
 	}
