@@ -1,4 +1,4 @@
-module chronicles
+module github.com/lakkinzimusic/chronicles
 
 go 1.14
 
