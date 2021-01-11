@@ -26,6 +26,7 @@ func main() {
 	fmt.Println(fmt.Sprintf("mongodb://%s:%s/", cfg.DB.Host, cfg.DB.Port))
 	client := CreateMongoClient(context.Background(), fmt.Sprintf("mongodb://%s:%s/", cfg.DB.Host, cfg.DB.Port))
 	collection := client.Database(cfg.DB.Database).Collection(cfg.DB.Collection)
+	fmt.Println(cfg.DB)
 	pb.RegisterChronicleServiceServer(grpcServer, service.NewChronicleService(service.NewStore(collection)))
 	grpcServer.Serve(listener)
 }

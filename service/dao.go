@@ -4,6 +4,7 @@ import (
 	//"go.mongodb.org/mongo-driver/bson"
 	"context"
 	"github.com/lakkinzimusic/chronicles/model"
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -32,7 +33,7 @@ func (s *MongoRepository) Create(ctx context.Context, chronicle *model.Chronicle
 
 func (s *MongoRepository) All(ctx context.Context) ([]*model.Chronicle, error) {
 	var result []*model.Chronicle
-	cursor, err := s.collection.Find(ctx, nil)
+	cursor, err := s.collection.Find(ctx, bson.D{{}})
 	if err != nil {
 		return nil, err
 	}
