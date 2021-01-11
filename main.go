@@ -1,49 +1,39 @@
 package main
 
 import (
+	"fmt"
+	"github.com/lakkinzimusic/chronicles/config"
 	pb "github.com/lakkinzimusic/chronicles/proto"
-	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
+	"github.com/lakkinzimusic/chronicles/service"
+	"log"
 	"net"
+	"context"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func main() {
-	listener, err := net.Listen("tcp", ":5300")
+	cfg := config.GetConfig("chronicles.yaml")
+	listener, err := net.Listen(cfg.Server.Protocol, cfg.Server.Port)
 	if err != nil {
 		grpclog.Fatalf("failed to listen: %v", err)
 	}
 
 	opts := []grpc.ServerOption{}
 	grpcServer := grpc.NewServer(opts...)
-
-	pb.RegisterChronicleServer(grpcServer, &server{})
+	client := CreateMongoClient(context.Background(), fmt.Sprintf("mongodb://%s:%s/", cfg.DB.Host, cfg.DB.Port))
+	collection := client.Database(cfg.DB.Database).Collection(cfg.DB.Collection)
+	pb.RegisterChronicleServiceServer(grpcServer, service.NewChronicleService(service.NewStore(collection)))
 	grpcServer.Serve(listener)
 }
 
-type server struct{}
-
-func (s *server) Do(c context.Context, request *pb.Request) (response *pb.Response, err error) {
-	n := 0
-	// Сreate an array of runes to safely reverse a string.
-	rune := make([]rune, len(request.Message))
-
-	for _, r := range request.Message {
-		rune[n] = r
-		n++
+func CreateMongoClient(ctx context.Context, uri string) *mongo.Client {
+	clientOptions := options.Client().ApplyURI(uri)
+	client, err := mongo.Connect(ctx, clientOptions)
+	if err != nil {
+		log.Fatal(err)
 	}
-
-	// Reverse using runes.
-	rune = rune[0:n]
-
-	for i := 0; i < n/2; i++ {
-		rune[i], rune[n-1-i] = rune[n-1-i], rune[i]
-	}
-
-	output := string(rune)
-	response = &pb.Response{
-		Message: output,
-	}
-
-	return response, nil
+	return client
 }

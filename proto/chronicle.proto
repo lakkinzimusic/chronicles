@@ -1,15 +1,24 @@
 syntax = "proto3";
-
 package chronicle;
+import "google/protobuf/timestamp.proto";
 
-service Chronicle {
-  rpc Do(Request) returns (Response) {}
-}
-
-message Request {
-  string message = 1;
+service ChronicleService {
+  rpc All(Chronicle) returns (Response) {}
+  rpc Create(Chronicle) returns (Response) {}
 }
 
 message Response {
-  string message = 1;
+  Chronicle chronicle = 1;
+  repeated Chronicle chronicles = 2;
+}
+
+message Chronicle {
+  google.protobuf.Timestamp date = 1;
+  repeated Debtor debtors = 2;
+}
+
+message Debtor {
+  uint32 ID = 1 [json_name="id"];
+  string name = 2;
+  string fullName = 3;
 }
