@@ -12,6 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e566562d-30f1-4c02-9597-025a7dc63f59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/dao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

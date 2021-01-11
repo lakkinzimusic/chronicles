@@ -23,6 +23,7 @@ func main() {
 
 	opts := []grpc.ServerOption{}
 	grpcServer := grpc.NewServer(opts...)
+	fmt.Println(fmt.Sprintf("mongodb://%s:%s/", cfg.DB.Host, cfg.DB.Port))
 	client := CreateMongoClient(context.Background(), fmt.Sprintf("mongodb://%s:%s/", cfg.DB.Host, cfg.DB.Port))
 	collection := client.Database(cfg.DB.Database).Collection(cfg.DB.Collection)
 	pb.RegisterChronicleServiceServer(grpcServer, service.NewChronicleService(service.NewStore(collection)))

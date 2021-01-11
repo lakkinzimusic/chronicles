@@ -34,11 +34,8 @@ func (s *Handler) Create(c context.Context, req *pb.Chronicle) (*pb.Response, er
 }
 
 func (s *Handler) All(c context.Context, filter *pb.Filter)  (*pb.Response, error) {
-	fmt.Println(1)
 	res := pb.Response{}
-	fmt.Println(2)
 	items, err := s.store.All(c)
-	fmt.Println(3)
 	if err != nil {
 		return &res, err
 	}
