@@ -10,22 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e566562d-30f1-4c02-9597-025a7dc63f59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/protoeditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chronicles.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/chronicle.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/debtor.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/chronicle.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/chronicle.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/chronicle.proto" afterDir="false" />
-    </list>
+    <list default="true" id="e566562d-30f1-4c02-9597-025a7dc63f59" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -7,6 +7,10 @@ service ChronicleService {
   rpc Create(Chronicle) returns (Response) {}
 }
 
+message Request {
+  Chronicle chronicle = 1;
+}
+
 message Response {
   Chronicle chronicle = 1;
   repeated Chronicle chronicles = 2;
