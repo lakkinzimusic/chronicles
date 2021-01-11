@@ -20,8 +20,8 @@ message Response {
 }
 
 message Chronicle {
-  google.protobuf.Timestamp date = 1;
-  repeated Debtor debtors = 2;
+//  google.protobuf.Timestamp date = 1;
+  repeated Debtor debtors = 1;
 }
 
 message Debtor {
