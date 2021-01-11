@@ -1,7 +1,9 @@
 package service
 
 import (
+	"fmt"
 	"github.com/lakkinzimusic/chronicles/model"
+	"github.com/golang/protobuf/ptypes/empty"
 	pb "github.com/lakkinzimusic/chronicles/proto"
 	"golang.org/x/net/context"
 )
@@ -9,7 +11,7 @@ import (
 
 type ChronicleService interface {
 	Create(context.Context, *pb.Chronicle)  (*pb.Response, error)
-	All(context.Context, *pb.Chronicle)  (*pb.Response, error)
+	All(context.Context, *empty.Empty)  (*pb.Response, error)
 }
 
 func NewChronicleService(store Store) ChronicleService {
@@ -32,14 +34,19 @@ func (s *Handler) Create(c context.Context, req *pb.Chronicle) (*pb.Response, er
 	return &res, nil
 }
 
-func (s *Handler) All(c context.Context, req *pb.Chronicle)  (*pb.Response, error) {
+func (s *Handler) All(c context.Context, empty *empty.Empty)  (*pb.Response, error) {
+	fmt.Println(1)
 	res := pb.Response{}
+	fmt.Println(2)
 	items, err := s.store.All(c)
+	fmt.Println(3)
 	if err != nil {
 		return &res, err
 	}
+	fmt.Println(4)
 	for _, item := range items {
 		res.Chronicles = append(res.Chronicles, model.UnmarshalChronicle(item))
 	}
+	fmt.Println(5)
 	return &res, nil
 }

@@ -10,7 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e566562d-30f1-4c02-9597-025a7dc63f59" name="Default Changelist" comment="" />
+    <list default="true" id="e566562d-30f1-4c02-9597-025a7dc63f59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/chronicle.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/chronicle.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/chronicle.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/handler.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +100,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="1043" y="359" width="786" height="381" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1609340833852" />
+    <state x="13" y="210" width="926" height="679" key="DBNavigator.ProjectSettingsDialog" timestamp="1610373145995">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="13" y="210" width="926" height="679" key="DBNavigator.ProjectSettingsDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1610373145994" />
     <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl" timestamp="1610194952309">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
@@ -103,6 +112,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="0" y="130" width="1026" height="840" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1610356216613" />
+    <state x="229" y="470" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610373063294">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="229" y="470" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1920.1055@0.25.1920.1055" timestamp="1610373063294" />
     <state x="144" y="177" width="664" height="746" key="new project wizard" timestamp="1610283134615">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
