@@ -3,7 +3,6 @@ package service
 import (
 	"fmt"
 	"github.com/lakkinzimusic/chronicles/model"
-	"github.com/golang/protobuf/ptypes/empty"
 	pb "github.com/lakkinzimusic/chronicles/proto"
 	"golang.org/x/net/context"
 )
@@ -11,7 +10,7 @@ import (
 
 type ChronicleService interface {
 	Create(context.Context, *pb.Chronicle)  (*pb.Response, error)
-	All(context.Context, *empty.Empty)  (*pb.Response, error)
+	All(context.Context, *pb.Filter)  (*pb.Response, error)
 }
 
 func NewChronicleService(store Store) ChronicleService {
@@ -34,7 +33,7 @@ func (s *Handler) Create(c context.Context, req *pb.Chronicle) (*pb.Response, er
 	return &res, nil
 }
 
-func (s *Handler) All(c context.Context, empty *empty.Empty)  (*pb.Response, error) {
+func (s *Handler) All(c context.Context, filter *pb.Filter)  (*pb.Response, error) {
 	fmt.Println(1)
 	res := pb.Response{}
 	fmt.Println(2)
