@@ -4,3 +4,5 @@ server:
 DB:
   host: 127.0.0.1
   port: 27017
+  collection: chronicles
+  database: chronicles
