@@ -1,12 +1,13 @@
 syntax = "proto3";
 package chronicle;
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/empty.proto";
 
 service ChronicleService {
-  rpc All(google.protobuf.Empty) returns (Response) {}
+  rpc All(Filter) returns (Response) {}
   rpc Create(Chronicle) returns (Response) {}
 }
+
+message Filter{}
 
 message Request {
   Chronicle chronicle = 1;
